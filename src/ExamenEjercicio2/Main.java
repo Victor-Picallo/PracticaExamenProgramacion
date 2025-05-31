@@ -44,9 +44,9 @@ public class Main {
         ticket += "\nIVA (17%): " + String.format("%.2f", iva) + "€";
         ticket += "\nTOTAL CON IVA: " + String.format("%.2f", totalConIva) + "€";
 
-        try (FileWriter fw = new FileWriter("tu_nombre.txt")) {
+        try (FileWriter fw = new FileWriter("VictorP.txt")) {
             fw.write(ticket);
-            System.out.println("Ticket guardado en tu_nombre.txt");
+            System.out.println("Ticket guardado en VictorP.txt");
         } catch (IOException e) {
             System.out.println("Error al guardar el ticket: " + e.getMessage());
         }

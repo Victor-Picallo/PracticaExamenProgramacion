@@ -6,11 +6,12 @@ public class Ciclista implements Comparable<Ciclista> {
     private String nombre;
     private double tiempoAcumulado = 0;
     private int posGeneral = -1;
+    private double ultimoTiempoParcial = 0;
 
     public Ciclista(int identificador, String nombre) {
         this.id = identificador;
         this.nombre = nombre;
-        generarTiempo();
+        // El tiempo acumulado debe empezar en 0
     }
 
     protected String imprimirTipo() {
@@ -49,27 +50,31 @@ public class Ciclista implements Comparable<Ciclista> {
         this.tiempoAcumulado = tiempoAcumulado;
     }
 
+    protected void setUltimoTiempoParcial(double tiempo) {
+        this.ultimoTiempoParcial = tiempo;
+    }
+
+    protected double getUltimoTiempoParcial() {
+        return ultimoTiempoParcial;
+    }
+
     protected void imprimir() {
         System.out.println("Identificador = " + getId());
         System.out.println("Nombre = " + getNombre());
         System.out.println("Tiempo Acumulado = " + getTiempoAcumulado());
     }
 
-    void generarTiempo() {
-        Random rd = new Random();
-        setTiempoAcumulado(rd.nextDouble(20.0, 30.0));
-    }
-
-    //2.Creamos el metodo calcularTiempoParcial
+    // Método para el apartado 2: calcular tiempo parcial y sumarlo al acumulado
     void calcularTiempoParcial() {
         Random rd = new Random();
         double tiempoParcial = 20 + rd.nextDouble() * 20;
-        setTiempoAcumulado(getTiempoAcumulado() + tiempoParcial);
+        ultimoTiempoParcial = tiempoParcial; // Guarda el parcial de la etapa
+        tiempoAcumulado += tiempoParcial;
     }
 
     @Override
     public int compareTo(Ciclista c) {
-        return (int) Double.compare(this.getTiempoAcumulado(), c.getTiempoAcumulado());
+        return Double.compare(this.getTiempoAcumulado(), c.getTiempoAcumulado());
     }
 
     @Override

@@ -35,21 +35,13 @@ public class Velocista extends Ciclista {
         return "Es un velocista";
     }
 
-    @Override
-    void generarTiempo() {
-        super.generarTiempo();
-        double tiempo = this.getTiempoAcumulado();
-        tiempo = tiempo - this.potenciaPromedio * 2 - this.velocidadPromedio * 0.25;
-        setTiempoAcumulado(tiempo);
-    }
-
-    //3.Sobreescribimos el metodo calcularTiempoParcial en velocita
+    // 3. Sobreescribimos el método calcularTiempoParcial en Velocista
     @Override
     void calcularTiempoParcial() {
         Random rd = new Random();
         double tiempoParcial = 20 + rd.nextDouble() * 20;
-        tiempoParcial += 5 * getVelocidadPromedio();
-        tiempoParcial += 2 * getPotenciaPromedio();
+        tiempoParcial += 5 * velocidadPromedio - 2 * potenciaPromedio;
+        setUltimoTiempoParcial(tiempoParcial);
         setTiempoAcumulado(getTiempoAcumulado() + tiempoParcial);
     }
 

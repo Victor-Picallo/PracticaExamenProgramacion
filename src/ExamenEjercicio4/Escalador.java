@@ -29,26 +29,18 @@ public class Escalador extends Ciclista {
         this.gradoRampa = gradoRampa;
     }
 
-    // Métodos de lógica
     @Override
     protected String imprimirTipo() {
         return "Es un escalador";
     }
 
-    @Override
-    void generarTiempo() {
-        double tiempo = 55.0 + Math.random() * 20;
-        tiempo = tiempo - this.aceleracionPromedio * 1.2 - this.gradoRampa * 0.35;
-        setTiempoAcumulado(tiempo);
-    }
-
-    //4.Sobreescribimos el metodo calcularTiempoParcial en escalador
+    // 4. Sobreescribimos el método calcularTiempoParcial en Escalador
     @Override
     void calcularTiempoParcial() {
         Random rd = new Random();
         double tiempoParcial = 20 + rd.nextDouble() * 20;
-        tiempoParcial += 3 * getAceleracionPromedio();
-        tiempoParcial -= 5 * getGradoRampa();
+        tiempoParcial += 5 * getGradoRampa() - 3 * getAceleracionPromedio();
+        setUltimoTiempoParcial(tiempoParcial);
         setTiempoAcumulado(getTiempoAcumulado() + tiempoParcial);
     }
 

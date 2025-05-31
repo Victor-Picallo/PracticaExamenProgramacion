@@ -8,6 +8,7 @@ public class Equipo implements Comparable<Equipo> {
     private double totalTiempo;
     private String pais;
     private ArrayList<Ciclista> listaCiclistas;
+    private double ultimoTiempoParcialEtapa = 0;
 
     // Constructores
     public Equipo(String nombre, String pais) {
@@ -50,6 +51,14 @@ public class Equipo implements Comparable<Equipo> {
         this.listaCiclistas = listaCiclistas;
     }
 
+    public double getUltimoTiempoParcial() {
+        return ultimoTiempoParcialEtapa;
+    }
+
+    public void setUltimoTiempoParcial(double ultimoTiempoParcialEtapa) {
+        this.ultimoTiempoParcialEtapa = ultimoTiempoParcialEtapa;
+    }
+
     // Métodos de gestión de ciclistas
     public void addCiclista(Ciclista ciclista) {
         getListaCiclistas().add(ciclista);
@@ -72,6 +81,15 @@ public class Equipo implements Comparable<Equipo> {
 
     public void ordenarCiclistasPorTiempo() {
         Collections.sort(getListaCiclistas());
+    }
+
+    //Metodo creado para el apartado 7 del ejercicio
+    public void calcularTiempoParcialEtapa() { // <-- Añadido
+        double suma = 0;
+        for (Ciclista c : getListaCiclistas()) {
+            suma += c.getUltimoTiempoParcial();
+        }
+        ultimoTiempoParcialEtapa = suma;
     }
 
     // Métodos de cálculo

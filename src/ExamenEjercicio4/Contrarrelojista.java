@@ -19,26 +19,19 @@ public class Contrarrelojista extends Ciclista {
         this.velocidadMaxima = velocidadMaxima;
     }
 
-    // Métodos de lógica
     @Override
     protected String imprimirTipo() {
         return "Es un contrarrelojista";
     }
 
-    @Override
-    void generarTiempo() {
-        super.generarTiempo();
-        double tiempo = this.getTiempoAcumulado();
-        tiempo = tiempo - this.velocidadMaxima * 0.33;
-        setTiempoAcumulado(tiempo);
-    }
-
-    //5.Sobreescribimos el metodo calcularTiempoParcial en contrarrelojista
+    // 5. Sobreescribimos el método calcularTiempoParcial en Contrarrelojista
     @Override
     void calcularTiempoParcial() {
         Random rd = new Random();
         double tiempoParcial = 20 + rd.nextDouble() * 20;
+        // Apartado 5: +4 * velocidadMaxima
         tiempoParcial += 4 * getVelocidadMaxima();
+        setUltimoTiempoParcial(tiempoParcial);
         setTiempoAcumulado(getTiempoAcumulado() + tiempoParcial);
     }
 

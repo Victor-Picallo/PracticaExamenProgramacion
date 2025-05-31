@@ -1,0 +1,11 @@
+TICKET 0
+
+1 x Producto1 - Descripción 1 (13,91€) = 13,91€
+5 x Producto2 - Descripción 2 (59,83€) = 299,13€
+2 x Producto3 - Descripción 3 (140,20€) = 280,39€
+2 x Producto4 - Descripción 4 (41,61€) = 83,23€
+5 x Producto5 - Descripción 5 (12,26€) = 61,28€
+3 x Producto6 - Descripción 6 (24,44€) = 73,32€
+TOTAL SIN IVA: 811,25€
+IVA (17%): 137,91€
+TOTAL CON IVA: 949,17€
