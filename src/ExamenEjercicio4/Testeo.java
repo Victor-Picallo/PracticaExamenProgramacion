@@ -4,6 +4,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+/*1/ Cambie el tipo de dato del atributo tiempoAcumulado a double
+2/ escriba para la clase ciclista el método void calcularTiempoParcial() de manera que obtenga un valor double entre 20 y 40, de forma aleatoria, y SE SUME al atributo tiempoAcumulado.
+3/ para los velocistas reescribirá este método de forma que además de hacer lo anteriormente indicado le añada un valor de 5 por la velocidad promedio y se le reste un valor de 2 por la potencia promedio.
+4/ en el caso de los escaladores exactamente igual y añadiendo un valor de 3 por la aceleración promedio y se le reste un valor de 5 por el grado rampa.
+5/ por último los contrarrelojistas calcularán el tiempo parcial con ese aleatorio más un valor de 4 por la velocidad máxima y ese total se le sumará al atributo tiempoAcumulado.
+6/ En el testeo creará TRES equipos de 3 ciclistas (uno de cada tipo) que participarán en una competición de TRES ETAPAS.
+7/ para cada etapa calculará el tiempo parcial de cada ciclista de cada equipo y mostrará la clasificación por equipos y la clasificación individual.
+8/Mostrará la clasificación final del conjunto de las tres etapas por equipos e individualmente.
+ */
+
 public class Testeo {
     static ArrayList<Equipo> equipos = new ArrayList<>();
 

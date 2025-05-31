@@ -3,6 +3,12 @@ package ExamenEjercicio2;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/*Se pide
+1/ generar un lote de SEIS PRODUCTOS diferentes, cuyo precio será aleatorio entre 1 y 200 (float).
+2/ cada línea de pedido llevará una cantidad aleatoria entre 1 y 6 (int).
+3/ se procederá a calcular el total de dicho lote incluyendo un iva del 17% mostrándolo por pantalla.
+4/ se guardará dicho ticket en un fichero de texto llamado tu_nombre.txt, que se entregará con el examen.*/
+
 public class Main {
 
     public static void main(String[] args) {

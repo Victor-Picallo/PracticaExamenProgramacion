@@ -6,6 +6,20 @@ import java.util.ArrayList;
 
 public class InmoApp {
 
+    /*Se pide 1/ crear una lista de al menos un objeto de estas siete clases citadas en la tabla mostrando sus características y el precio de venta de cada una.
+    2/ Muestre el total del valor de los inmuebles vendidos.
+    3/ Muestre el promedio del valor por metro cuadrado del total de inmuebles vendidos
+    4/ Implementa la interfaz impuesto que implementa el método calcularImpuesto que se obtendrá de la siguiente forma:
+    a/ todas las casas tienen un 2% de su valor de venta, los apartamentos el 4% y los locales el 6%.
+    b/ las viviendas pagan 700 por el número de habitaciones y 300 por el número de baños
+    c/ se añadirá en las rurales una cantidad de 4 veces su altitud
+    d/ se añadirá en los apartamentos familiares una cantidad de 3 veces su valor de administración
+    e/ se restará 3000 de impuesto a las oficinas que no sean del gobierno
+    f/ en las casas conjunto cerrado se les restará 6000 si no son con piscina y otros 3000 si no tiene campo deportivo.
+    5/ En la lista del testeo se mostrará el impuesto de cada uno de los inmuebles vendidos
+    6/ Se mostrará el total de dinero a pagar por los impuestos
+    7/ se guardará la colección de inmuebles en un fichero inmobiliaria_tus_apellidos.dat que se entregará con el examen.*/
+
     public static void main(String[] args) {
         //1.Creamos la lista
         ArrayList<Inmueble> listaInm = new ArrayList<>();
@@ -76,8 +90,8 @@ public class InmoApp {
         //7.Guardar en un ficher
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream
                 ("inmobiliaria_PicalloRodriguez.dat"))) {
-        oos.writeObject(listaInm);
-        System.out.println("Coleccion guardada en inmobiliaria_PicalloRodriguez.dat");
+            oos.writeObject(listaInm);
+            System.out.println("Coleccion guardada en inmobiliaria_PicalloRodriguez.dat");
         } catch (Exception e) {
             e.printStackTrace();
         }
