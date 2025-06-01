@@ -81,21 +81,18 @@ public class Testeo {
         }
     }
 
-    //Clasificacion individual de la etapa
+    //Clasificacion indicidual de la etapa
     public static void mostrarClasificacionIndividualEtapa() {
         ArrayList<Ciclista> todos = new ArrayList<Ciclista>();
         for (Equipo eq : equipos) {
             todos.addAll(eq.getListaCiclistas());
         }
-        Collections.sort(todos, new Comparator<Ciclista>() {
-            public int compare(Ciclista c1, Ciclista c2) {
-                return Double.compare(c1.getUltimoTiempoParcial(), c2.getUltimoTiempoParcial());
-            }
-        });
+        todos.sort(Comparator.comparingDouble(Ciclista::getUltimoTiempoParcial));
         for (Ciclista c : todos) {
             System.out.printf(c.getNombre() + " -> " + "%.2f\n", c.getUltimoTiempoParcial());
         }
     }
+
 
 
     // Clasificación final por equipos
